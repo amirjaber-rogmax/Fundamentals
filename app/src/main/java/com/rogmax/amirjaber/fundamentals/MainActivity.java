@@ -37,10 +37,13 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.MultiAutoCompleteTextView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -70,6 +73,8 @@ public class MainActivity extends AppCompatActivity implements FragmentSlide.OnF
     private RelativeLayout toastLayout;
     private ProgressBar progressBar;
     private FloatingActionButton fab;
+    private AutoCompleteTextView autoCompleteTextView;
+    private MultiAutoCompleteTextView multiAutoCompleteTextView;
 
 
     // vars
@@ -93,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements FragmentSlide.OnF
     MediaPlayer mediaPlayer;
     Random random;
     String RandomAudioFileName = "ABCDEFGHIJKLMNOP";
+    String[] languages = {"Android ", "java", "IOS", "SQL", "JDBC", "Web services"};
 
 
     // activity created
@@ -202,6 +208,8 @@ public class MainActivity extends AppCompatActivity implements FragmentSlide.OnF
         toastLayout = (RelativeLayout) this.getLayoutInflater().inflate(R.layout.toast_custom, (RelativeLayout) findViewById(R.id.relLayoutToast));
         toastText = toastLayout.findViewById(R.id.tvToast);
         fab = findViewById(R.id.fab);
+        autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
+        multiAutoCompleteTextView = findViewById(R.id.multiAutoCompleteTextView);
 
 
     }
@@ -220,6 +228,14 @@ public class MainActivity extends AppCompatActivity implements FragmentSlide.OnF
             }
         });
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, languages);
+
+        autoCompleteTextView.setAdapter(arrayAdapter);
+        autoCompleteTextView.setThreshold(1);
+
+        multiAutoCompleteTextView.setAdapter(arrayAdapter);
+        multiAutoCompleteTextView.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
     }
 
 
