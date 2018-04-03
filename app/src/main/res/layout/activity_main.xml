@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/display"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.rogmax.amirjaber.fundamentals.MainActivity">
+
+    <TextView
+        android:id="@+id/tv_hello_android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="cursive"
+        android:text="@string/tv_hello_android"
+        android:textSize="30sp"
+        tools:targetApi="jelly_bean" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_hello_android"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:drawableLeft="@drawable/ic_point"
+                android:drawableStart="@drawable/ic_point"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="@string/start_stop_service_myservice"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                tools:targetApi="jelly_bean" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/button_shape_left"
+                    android:fontFamily="@font/almendra_bold"
+                    android:onClick="startService"
+                    android:text="@string/start_service"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    tools:targetApi="jelly_bean" />
+
+                <Button
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/button_shape_right"
+                    android:fontFamily="@font/almendra_bold"
+                    android:onClick="stopService"
+                    android:text="@string/stop_service"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    tools:targetApi="jelly_bean" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:drawableLeft="@drawable/ic_point"
+                android:drawableStart="@drawable/ic_point"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="@string/broadcast_receiver"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                tools:targetApi="jelly_bean" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:drawableLeft="@drawable/ic_point"
+                android:drawableStart="@drawable/ic_point"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="@string/content_provider"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                tools:targetApi="jelly_bean" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/et_name"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight=".5"
+                        android:hint="@string/name" />
+
+                    <EditText
+                        android:id="@+id/et_age"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight=".5"
+                        android:hint="@string/age" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        style="@style/Widget.AppCompat.Button"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight=".5"
+                        android:background="@drawable/button_shape_left"
+                        android:fontFamily="@font/almendra_bold"
+                        android:onClick="addName"
+                        android:text="@string/add_name"
+                        android:textAllCaps="false"
+                        android:textColor="#fff"
+                        android:textSize="20sp"
+                        tools:targetApi="jelly_bean" />
+
+                    <Button
+                        style="@style/Widget.AppCompat.Button"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight=".5"
+                        android:background="@drawable/button_shape_right"
+                        android:fontFamily="@font/almendra_bold"
+                        android:onClick="retrieveUsers"
+                        android:text="@string/retrieve_users"
+                        android:textAllCaps="false"
+                        android:textColor="#fff"
+                        android:textSize="20sp"
+                        tools:targetApi="jelly_bean" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:drawableLeft="@drawable/ic_point"
+                android:drawableStart="@drawable/ic_point"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Bundles"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                tools:targetApi="jelly_bean" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/et_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:hint="Any String" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        style="@style/Widget.AppCompat.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/button_shape_left"
+                        android:fontFamily="@font/almendra_bold"
+                        android:onClick="openActivity"
+                        android:text="Send Data To Another Activity"
+                        android:textAllCaps="false"
+                        android:textColor="#fff"
+                        android:textSize="20sp"
+                        tools:targetApi="jelly_bean" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:drawableLeft="@drawable/ic_point"
+                android:drawableStart="@drawable/ic_point"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Fragments, Pager &amp; Tabs"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                tools:targetApi="jelly_bean" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/button_shape_left"
+                    android:fontFamily="@font/almendra_bold"
+                    android:onClick="goToFragment"
+                    android:text="FragmentActivity"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    tools:targetApi="jelly_bean" />
+
+                <Button
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/button_shape_right"
+                    android:fontFamily="@font/almendra_bold"
+                    android:onClick="tabFragment"
+                    android:text="Fragment Tabs"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    tools:targetApi="jelly_bean" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/button_shape_left"
+                    android:fontFamily="@font/almendra_bold"
+                    android:onClick="slideFragment"
+                    android:stateListAnimator="@null"
+                    android:text="Fragment Slide"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    tools:targetApi="jelly_bean" />
+
+                <Button
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/button_shape_right"
+                    android:fontFamily="@font/almendra_bold"
+                    android:onClick="multiFragments"
+                    android:text="Multi-Fragments"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    tools:targetApi="jelly_bean" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:drawableLeft="@drawable/ic_point"
+                android:drawableStart="@drawable/ic_point"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Android DialogBoxes"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                tools:targetApi="jelly_bean" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/button_shape_left"
+                    android:fontFamily="@font/almendra_bold"
+                    android:onClick="alertDialog"
+                    android:text="AlertDialog"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    tools:targetApi="jelly_bean" />
+
+                <Button
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/button_shape_right"
+                    android:fontFamily="@font/almendra_bold"
+                    android:onClick="dateTimeDialog"
+                    android:text="Date &amp; Time"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    tools:targetApi="jelly_bean" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/button_shape_left"
+                    android:fontFamily="@font/almendra_bold"
+                    android:onClick="progressBar"
+                    android:stateListAnimator="@null"
+                    android:text="Progress Bar"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    tools:targetApi="jelly_bean" />
+
+                <Button
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/button_shape_right"
+                    android:fontFamily="@font/almendra_bold"
+                    android:onClick="listDialog"
+                    android:text="List Dialog"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    tools:targetApi="jelly_bean" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:drawableLeft="@drawable/ic_point"
+                android:drawableStart="@drawable/ic_point"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Android DialogBoxes"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                tools:targetApi="jelly_bean" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/button_shape_left"
+                    android:fontFamily="@font/almendra_bold"
+                    android:onClick="normalToast"
+                    android:text="Norm. Toast"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    tools:targetApi="jelly_bean" />
+
+                <Button
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/button_shape_right"
+                    android:fontFamily="@font/almendra_bold"
+                    android:onClick="customToast"
+                    android:text="Custom Toast"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    tools:targetApi="jelly_bean" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/button_shape_left"
+                    android:fontFamily="@font/almendra_bold"
+                    android:onClick="normalSnackBar"
+                    android:stateListAnimator="@null"
+                    android:text="Norm. Snackbar"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    tools:targetApi="jelly_bean" />
+
+                <Button
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/button_shape_right"
+                    android:fontFamily="@font/almendra_bold"
+                    android:onClick="customSnackBar"
+                    android:text="Cust. Snackbar"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    tools:targetApi="jelly_bean" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:drawableLeft="@drawable/ic_point"
+                android:drawableStart="@drawable/ic_point"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Drag &amp; Drop"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                tools:targetApi="jelly_bean" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/button_shape_left"
+                    android:fontFamily="@font/almendra_bold"
+                    android:onClick="dragDropActivity"
+                    android:text="Drag &amp; Drop and Show Notf."
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    tools:targetApi="jelly_bean" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:drawableLeft="@drawable/ic_point"
+                android:drawableStart="@drawable/ic_point"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Get Location - Location Services"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                tools:targetApi="jelly_bean" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/button_shape_left"
+                    android:fontFamily="@font/almendra_bold"
+                    android:onClick="getLocation"
+                    android:text="Get Location"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    tools:targetApi="jelly_bean" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:drawableLeft="@drawable/ic_point"
+                android:drawableStart="@drawable/ic_point"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Send Message || Call Phone"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                tools:targetApi="jelly_bean" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/button_shape_left"
+                    android:fontFamily="@font/almendra_bold"
+                    android:onClick="sendMessage"
+                    android:text="Send a Message"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    tools:targetApi="jelly_bean" />
+
+                <Button
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/button_shape_left"
+                    android:fontFamily="@font/almendra_bold"
+                    android:onClick="callPhone"
+                    android:text="Call Phone"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    tools:targetApi="jelly_bean" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:drawableLeft="@drawable/ic_point"
+                android:drawableStart="@drawable/ic_point"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Animations"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                tools:targetApi="jelly_bean" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/button_shape_left"
+                    android:fontFamily="@font/almendra_bold"
+                    android:onClick="goToAnimations"
+                    android:text="Animations"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    tools:targetApi="jelly_bean" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:drawableLeft="@drawable/ic_point"
+                android:drawableStart="@drawable/ic_point"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Audio Manager &amp; Capture"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                tools:targetApi="jelly_bean" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <Button
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/button_shape_left"
+                    android:fontFamily="@font/almendra_bold"
+                    android:onClick="recordAudio"
+                    android:text="Audio Capture"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    tools:targetApi="jelly_bean" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        style="@style/Widget.AppCompat.Button"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight=".5"
+                        android:background="@drawable/button_shape_left"
+                        android:fontFamily="@font/almendra_bold"
+                        android:onClick="displayMode"
+                        android:text="Status"
+                        android:textAllCaps="false"
+                        android:textColor="#fff"
+                        android:textSize="20sp"
+                        tools:targetApi="jelly_bean" />
+
+                    <Button
+                        style="@style/Widget.AppCompat.Button"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight=".5"
+                        android:background="@drawable/button_shape_left"
+                        android:fontFamily="@font/almendra_bold"
+                        android:onClick="switchMode"
+                        android:text="Mode"
+                        android:textAllCaps="false"
+                        android:textColor="#fff"
+                        android:textSize="20sp"
+                        tools:targetApi="jelly_bean" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="25dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:minHeight="50dp"
+        android:minWidth="200dp"
+        android:progress="1" />
+
+    <TextView
+        android:id="@+id/progressCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progressBar"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="20dp"
+        android:layout_marginTop="-20dp"
+        android:text="0"
+        android:textSize="10dp" />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@mipmap/ic_mail"
+            app:backgroundTint="@color/colorPrimaryDark"
+            app:fabSize="normal" />
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</RelativeLayout>
